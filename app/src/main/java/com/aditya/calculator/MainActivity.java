@@ -173,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
                 text = displayText.getText().toString();
                 int len = text.length();
                 if (text.equals("")){                }
-                else if(text.charAt(len-1) == '+' || text.charAt(len-1) == '-' || text.charAt(len-1) == 'X' || text.charAt(len-1) == '/'){
+                else if(text.endsWith("/") || text.endsWith("*") || text.endsWith("-") || text.endsWith("+")){
 
                 }
                 else{
@@ -189,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 text = displayText.getText().toString();
                 int len = text.length();
                 if (text.equals("")){                }
-                else if(text.charAt(len-1) == '+' || text.charAt(len-1) == '-' || text.charAt(len-1) == 'X' || text.charAt(len-1) == '/'){
+                else if(text.endsWith("/") || text.endsWith("*") || text.endsWith("-") || text.endsWith("+")){
 
                 }
                 else{
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                 text = displayText.getText().toString();
                 int len = text.length();
                 if (text.equals("")){                }
-                else if(text.charAt(len-1) == '+' || text.charAt(len-1) == '-' || text.charAt(len-1) == '*' || text.charAt(len-1) == '/'){
+                else if(text.endsWith("/") || text.endsWith("*") || text.endsWith("-") || text.endsWith("+")){
 
                 }
                 else{
@@ -221,7 +221,7 @@ public class MainActivity extends AppCompatActivity {
                 text = displayText.getText().toString();
                 int len = text.length();
                 if (text.equals("")){                }
-                else if(text.charAt(len-1) == '+' || text.charAt(len-1) == '-' || text.charAt(len-1) == '*' || text.charAt(len-1) == '/'){
+                else if(text.endsWith("/") || text.endsWith("*") || text.endsWith("-") || text.endsWith("+")){
 
                 }
                 else{
@@ -234,7 +234,11 @@ public class MainActivity extends AppCompatActivity {
         b_assign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (text.endsWith("/") || text.endsWith("*") || text.endsWith("-") || text.endsWith("+")){
+                text = displayText.getText().toString();
+                if(text.equals("")){
+                    Toast.makeText(getApplicationContext(),"Please Enter Input",Toast.LENGTH_SHORT).show();
+                }
+                else if (text.endsWith("/") || text.endsWith("*") || text.endsWith("-") || text.endsWith("+")){
                     Toast.makeText(getApplicationContext(),"Invalid Format Input",Toast.LENGTH_SHORT).show();
                 }
                  else {
